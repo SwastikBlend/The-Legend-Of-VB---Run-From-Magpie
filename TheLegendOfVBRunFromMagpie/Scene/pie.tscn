@@ -1,0 +1,121 @@
+[gd_scene load_steps=17 format=3 uid="uid://f05shyeppi7v"]
+
+[ext_resource type="Texture2D" uid="uid://cej8d7513m5fk" path="res://Assets/legendofbazzaart.png" id="1_6wlgj"]
+[ext_resource type="Script" path="res://Scripts/pie.gd" id="1_t1atj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evxis"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df3x"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(272, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e344w"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(288, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vtf4"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(304, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7lje"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(320, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_817io"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(272, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf7s0"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(288, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7um2"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(304, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja4qn"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(320, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsxar"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(272, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snkq3"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(288, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkhjl"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(304, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jexhx"]
+atlas = ExtResource("1_6wlgj")
+region = Rect2(320, 208, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3fcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0df3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e344w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vtf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7lje")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_817io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf7s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7um2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja4qn")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsxar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snkq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkhjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jexhx")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 10.0
+}]
+
+[node name="Pie" type="CharacterBody2D"]
+script = ExtResource("1_t1atj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_evxis")
+
+[node name="PieAnimation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_d3fcc")
+animation = &"Up"
+autoplay = "Down"

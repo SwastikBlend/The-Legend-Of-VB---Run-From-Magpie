@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1d02df4djm2h"]
+
+[ext_resource type="Texture2D" uid="uid://cej8d7513m5fk" path="res://Assets/legendofbazzaart.png" id="1_k45n2"]
+[ext_resource type="Script" path="res://Scripts/vb.gd" id="1_v4c2e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wx336"]
+radius = 5.0
+height = 18.0
+
+[node name="VB" type="Area2D"]
+script = ExtResource("1_v4c2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k45n2")
+hframes = 23
+vframes = 24
+frame = 231
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_wx336")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
