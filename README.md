@@ -30,7 +30,7 @@ Feel free to make changes to the project! Contributions and improvements are mor
 
 *Play the Game*
 
-You can play the game directly on Itch.io here!
+You can play the game directly on Itch.io here! https://swastik-dev.itch.io/the-legend-of-vb-run-from-magpie
 
 *Contributing*
 
